@@ -28,7 +28,7 @@ cargo stylus deploy \
 
 Estimates the gas required and prints it out-
 
-`
+```
 stripped custom section from user wasm to remove any sensitive data
 contract size: 24.5 KB (24525 bytes)
 wasm size: 89.3 KB (89321 bytes)
@@ -42,13 +42,14 @@ project metadata hash computed on deployment: "37f08c6c7c172be74d5b9ba715fdb0da6
 stripped custom section from user wasm to remove any sensitive data
 contract size: 24.5 KB (24525 bytes)
 wasm data fee: 0.000131 ETH (originally 0.000110 ETH with 20% bump)
+```
 
+```
 estimates
 deployment tx gas: 5399499
 gas price: "0.100000000" gwei
 deployment tx total cost: "0.000539949900000000" ETH
-
-`
+```
 
 
 ```
@@ -130,10 +131,10 @@ RPC_URL=your_rpc_url
 
 
 ```
-
-```
 pnpm run dev
 ```
+
+
 
 
 
