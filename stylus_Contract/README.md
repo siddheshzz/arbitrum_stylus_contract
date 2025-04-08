@@ -2,6 +2,19 @@
 
 # Stylus Hello World
 
+
+deployed code at address: 0xa097d7d1918dc539b22ab24747354391f1f45543
+deployment tx hash: 0xd21492f8c1f65065b86ddbb3f9d465efeac38136cbcf82d047d0cb3e54c55c42
+contract activated and ready onchain with tx hash: 0x36e7ff8819e8128c4bf05c53e1315d436f58a3c45b9d4705379783d92afe142f
+
+NOTE: We recommend running cargo stylus cache bid a097d7d1918dc539b22ab24747354391f1f45543 0 to cache your activated contract in ArbOS.
+Cached contracts benefit from cheaper calls. To read more about the Stylus contract cache, see
+https://docs.arbitrum.io/stylus/how-tos/caching-contracts
+
+
+
+
+
 Project starter template for writing Arbitrum Stylus programs in Rust using the [stylus-sdk](https://github.com/OffchainLabs/stylus-sdk-rs). It includes a Rust implementation of a basic counter Ethereum smart contract:
 
 ```js

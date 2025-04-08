@@ -1,2 +1,4 @@
 /target
 .env
+/viem_arb/node_modules/
+/viem_arb/.env

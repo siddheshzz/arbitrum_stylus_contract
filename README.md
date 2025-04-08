@@ -1,3 +1,146 @@
+# Stylus Artbitrum ERC721 Token
+
+Configure Stylus by visiting [Arbitrum Stylus](https://docs.arbitrum.io/stylus/quickstart)
+
+Creating a project:
+```
+cargo stylus new <YOUR_PROJECT_NAME>
+```
+
+check the project
+
+> If you end up with `error[E0463]: can't find crate for `core`` try -
+```
+rustup default 1.80
+rustup target add wasm32-unknown-unknown --toolchain 1.80
+```
+
+```
+cargo stylus check -e https://sepolia-rollup.arbitrum.io/rpc
+```
+
+```
+cargo stylus deploy \
+   --endpoint='https://sepolia-rollup.arbitrum.io/rpc' \
+   --private-key="<YOUR_PRIVATE_KEY>" \
+   --estimate-gas
+```
+
+Estimates the gas required and prints it out-
+
+`
+stripped custom section from user wasm to remove any sensitive data
+contract size: 24.5 KB (24525 bytes)
+wasm size: 89.3 KB (89321 bytes)
+File used for deployment hash: ./Cargo.lock
+File used for deployment hash: ./Cargo.toml
+File used for deployment hash: ./examples/counter.rs
+File used for deployment hash: ./rust-toolchain.toml
+File used for deployment hash: ./src/lib.rs
+File used for deployment hash: ./src/main.rs
+project metadata hash computed on deployment: "37f08c6c7c172be74d5b9ba715fdb0da6751240cec0b6afab0808229696d49e2"
+stripped custom section from user wasm to remove any sensitive data
+contract size: 24.5 KB (24525 bytes)
+wasm data fee: 0.000131 ETH (originally 0.000110 ETH with 20% bump)
+
+estimates
+deployment tx gas: 5399499
+gas price: "0.100000000" gwei
+deployment tx total cost: "0.000539949900000000" ETH
+
+`
+
+
+```
+cargo stylus deploy \
+   --endpoint='https://sepolia-rollup.arbitrum.io/rpc' \
+   --private-key="<YOUR_PRIVATE_KEY>"
+
+```
+
+
+Now deploy the contract to Arbitrum sepolia testnet, make sure you have arb sepolia.
+If you dont have arb sepolia you can get Eth Sepolia and use [Bridge](https://bridge.arbitrum.io/?destinationChain=arbitrum-sepolia&sourceChain=sepolia)
+Refer [this](https://academy.horizonprotocol.com/futures/guides/futures-testnet-guide/1.-getting-started/b.-get-arbitrum-sepolia-eth)
+
+Export the Abi-
+
+```
+cargo stylus export-abi
+```
+
+
+## Interacting with smart contract via viem
+
+```
+
+mkdir my_project
+cd my_project
+
+pnpm init
+
+<!-- Next, install TypeScript, @types/node, dotenv, and ts-node -->
+pnpm add typescript @types/node dotenv ts-node
+```
+```
+
+<!-- Set Up TypeScript Configuration -->
+touch tsconfig.json
+
+```
+Add following to the tsconfig.json
+```
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+  }
+}
+```
+
+```
+<!-- Create source directory with index.ts in it -->
+mkdir src
+touch src/index.ts
+
+```
+
+configure your package.json like wise
+{
+  ...
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --loader ts-node/esm ./src/index.ts"
+  }
+  ...
+  
+}
+
+Create .env and :
+```
+PRIVATE_KEY=your_private_key
+RPC_URL=your_rpc_url
+
+```
+
+
+```
+
+```
+pnpm run dev
+```
+
+
+
+
+
+
+
 
 
 # Arbitrum
